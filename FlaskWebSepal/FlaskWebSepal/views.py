@@ -11,6 +11,10 @@ import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.sql import text
 
+import pickle
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+
 app.config['SECRET_KEY'] = 'fb93246348ed383a9de5b7e77ff8d579' # be sure to use only the most recent key generated
 #name of the database to create or use
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site2.db'
@@ -38,7 +42,7 @@ def newFunction(length, width, p_length, p_width): #from registration form
     text_file.write('\n''<div class="jumbotron">'
                     '\n''<h1>Results</h1>'
                     '\n''<p class="lead">Flower Dimensions.</p>'
-                    '\n''<p><a href="{{ url_for("register") }}">Register Again </a></p>'
+                    '\n''<p><a href="{{ url_for("register") }}">Enter New Values </a></p>'
                     '\n''</div>')
     text_file.write(html)
     text_file.write('\n''{% endblock content %}')
@@ -140,3 +144,4 @@ def readDB():
 
 #database, new code added to make sure table named usertable is created
 db.create_all()
+
