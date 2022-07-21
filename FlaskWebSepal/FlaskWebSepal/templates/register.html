@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Enter Flower Dimensions</legend>
+            <div class="form-group">
+                {{ form.length.label(class="form-control-label") }}
+                {{form.length(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+                {{ form.width.label(class="form-control-label") }}
+                {{ form.width(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.p_length.label(class="form-control-label") }}
+                {{ form.p_length(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-group">
+                {{ form.p_width.label(class="form-control-label") }}
+                {{ form.p_width(class="form-control form-control-lg") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p><a class="btn btn-default" href="results">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
+
